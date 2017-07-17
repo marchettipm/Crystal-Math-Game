@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+	<html lang="en=us">
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	  <script
+	  src="https://code.jquery.com/jquery-3.2.1.js"
+	  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	  crossorigin="anonymous"></script>
+	 
+
+	<title>Crystal Math</title>
+
+</head>
+
+<body>
+
+	<h1 style="font-size: 40px">Crystal Math!!!</h1>
+
+<div>
+	<p>You will be given a random number at the start of the game.</p>
+	<p>There are four crystals below. By clicking on a crystal you wil add a specific amount of points to your total score</p>
+	<p>You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number.</p>
+	<p>the value of each crystal is hidden from you until you click on it.</p>
+	<p>Each time the game restarts, the game will change the value of each crystals.</p>
+</div>
+
+	<div class="crystals">
+		<div class = "redGem gem" style="display: inline-block;">
+			<img src="assets/images/redgem.png">
+		</div>
+		<div class = "blueGem gem" style="display: inline-block;">
+			<img src="assets/images/bluegem.png">
+		</div>
+		<div class = "greenGem gem" style="display: inline-block;">
+			<img src = "assets/images/greenGem.png"> 
+		</div>
+		<div class = "yellowGem gem" style="display: inline-block;">
+			<img src = "assets/images/yellowGem.png">
+		</div>
+		
+	</div>
+
+	<div>
+		<h1 class="rndNum">Target Number: <span id="rndNum"></span></h1>
+
+	</div>
+
+	<div>
+		<h1 class="sumTotal"> Your Total: <span id="sumTotal"></span></h1>
+	</div>
+
+	<div>
+		<h1>Wins: <span id = "wins"></span></h1>
+	</div>
+
+	<div>
+		<h1>Losses: <span id = "losses"></span></h1>
+	</div>
+
+<script type="text/javascript">
+
+
+	var redGem;
+	var greenGem;
+	var blueGem;
+	var yellowGem;
+	var sum;
+	var random;
+	var wins = 0;
+	var losses = 0;
+	var targetNumber;
+
+
+
+function randomNumber(min, max) {
+	 return min + Math.floor((Math.random() * (max + 1 - min)));
+		}
+
+function initializeGemValues () {
+		$(".redGem").val(randomNumber(1,12));
+		$(".greenGem").val(randomNumber(1,12));
+		$(".blueGem").val(randomNumber(1,12));
+		$(".yellowGem").val(randomNumber(1,12));
+			console.log($(".redGem").val());
+
+	}
+function reset(){
+		sum = 0;
+		targetNumber = randomNumber(19,121);
+		$("#rndNum").text(targetNumber);
+		$("#wins").text(wins);
+		$("#losses").text(losses);
+		initializeGemValues();
+	}
+
+$(document).ready(function(){
+	
+
+
+reset();
+
+$(".gem").on('click', function(){
+	sum = sum + parseInt($(this).val());
+	$("#sumTotal").text(sum);
+	if(sum === targetNumber) {
+		wins ++;
+		$("#wins").text(wins);
+		reset();
+	}
+	
+	if(sum > targetNumber) {
+		losses ++;
+		$("#losses").text(losses);
+		reset();
+	}
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+
+</script>
+
+
+</body>
+
+
+</html>
+
