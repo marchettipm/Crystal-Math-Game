@@ -1,5 +1,53 @@
-.fighters {
-	background-color: orange;
-	display: 
+body {
+	background-image: url(https://images8.alphacoders.com/294/294069.jpg);
+	background-size: cover;
+	}
 
+
+.Math {
+	font-family: Heart Breaking Bad, cursive;
+	font-size: 115px;
+
+}
+
+.Instructions {
+	display: flex;
+	justify-content: flex-end;
+	font-family: 'Teko', sans-serif;
+	font-size: 20pt;
+	color: black;
+	flex-wrap: wrap;
+	margin-left: 500px;
+	margin-top: 50px;
+	margin-right: 35px;
+	}
+
+.stats {
+	font-family: 'Teko', sans-serif;
+	font-size: 20pt;
+	margin-left: 80px;
+}
+
+#Math1 {
+	display: flex;
+	margin: 25px 0 0 75px;
+	width: 275px;
+	justify-content: center;
+}
+
+#Math2 {
+	display: flex;
+	margin-left: 150px;
+	width: 240px;
+	justify-content: center;
+}
+
+.wholeThing {
+	display: flex;
+
+}
+
+.crystals {
+	margin-bottom: 30px;
+	margin-left: 35px;
 }
